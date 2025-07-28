@@ -1,0 +1,21 @@
+@use "./components/tabs";
+// @use "components/card";
+// @use "layout/header";
+// @use "layout/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+  color: #181818;
+}
+
+.container {
+  max-width: 1200px;
+  margin: clamp(48px, 8vw, 90px) auto clamp(64px, 10vw, 136px) auto;
+}
+
+nav {
+  margin: 0 16px;
+}
