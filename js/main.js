@@ -1,3 +1,5 @@
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
 const tabs = document.getElementById('tabs-container');
 
 fetch('./components/Tabs/Tabs.html')
@@ -8,12 +10,10 @@ fetch('./components/Tabs/Tabs.html')
   .catch(err => console.error('Failed to load tabs:', err));
 
 
-const tabsContainer = document.getElementById('tabs-container');
-
 fetch('./components/Tabs/Tabs.html')
   .then(res => res.text())
   .then(html => {
-    tabsContainer.innerHTML = html;
+    tabs.innerHTML = html;
 
     const menuToggle = document.getElementById("tabsMenuToggle");
     const dropdown = document.getElementById("tabsDropdown");
@@ -31,3 +31,14 @@ fetch('./components/Tabs/Tabs.html')
     }
   })
   .catch(err => console.error('Failed to load tabs:', err));
+
+
+const cards = document.getElementById('cards-container');
+
+fetch('./components/Cards/Cards.html')
+  .then(res => res.text())
+  .then(html => {
+    cards.innerHTML = html;
+  })
+  .catch(err => console.error('Failed to load tabs:', err));
+
