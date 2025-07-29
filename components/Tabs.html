@@ -1,21 +1,21 @@
-<nav>
+<nav class="nav" role="navigation" aria-label="main navigation">
   <ul class="tabs">
-    <li class="tabs__tab active">All</li>
-    <li class="tabs__tab">Taxes & Efficiency</li>
-    <li class="tabs__tab">Investment banking</li>
-    <li class="tabs__tab">Financial Plan</li>
-    <li class="tabs__tab">Audit & Evaluation</li>
+    <li class="tabs__item active" role="tab">All</li>
+    <li class="tabs__item" role="tab">Taxes & Efficiency</li>
+    <li class="tabs__item" role="tab">Investment banking</li>
+    <li class="tabs__item" role="tab">Financial Plan</li>
+    <li class="tabs__item" role="tab">Audit & Evaluation</li>
 
-    <div class="tabs__menu--mobile" id="tabsMenuToggle">
+    <div class="tabs__mobile-toggle" id="tabsMenuToggle" aria-label="open menu" aria-expanded="false">
       <img src="/assets/burger-menu.svg" alt="menu" />
     </div>
   </ul>
 
-  <ul class="tabs__dropdown" id="tabsDropdown">
-    <li class="tabs__dropdown--item">All</li>
-    <li class="tabs__dropdown--item">Taxes & Efficiency</li>
-    <li class="tabs__dropdown--item">Investment banking</li>
-    <li class="tabs__dropdown--item">Financial Plan</li>
-    <li class="tabs__dropdown--item">Audit & Evaluation</li>
+  <ul class="tabs__dropdown" id="tabsDropdown" role="menu">
+    <li class="tabs__dropdown-item active" role="menuitem">All</li>
+    <li class="tabs__dropdown-item" role="menuitem">Taxes & Efficiency</li>
+    <li class="tabs__dropdown-item" role="menuitem">Investment banking</li>
+    <li class="tabs__dropdown-item" role="menuitem">Financial Plan</li>
+    <li class="tabs__dropdown-item" role="menuitem">Audit & Evaluation</li>
   </ul>
 </nav>

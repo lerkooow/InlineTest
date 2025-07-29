@@ -189,15 +189,28 @@ export const mobileCardsHTML = `
 
 let currentTagName = 'All';
 
-export function setActiveTab(tabsItems, tab = null) {
+export function setActiveTab(tabsItems, activeTab = null, dropdownItems = null) {
     tabsItems.forEach(t => t.classList.remove('active'));
-    const activeTab = tab || tabsItems[0];
-    activeTab.classList.add('active');
+    if (dropdownItems) {
+        dropdownItems.forEach(d => d.classList.remove('active'));
+    }
 
-    currentTagName = activeTab.textContent;
+    const tabToActivate = activeTab || tabsItems[0];
+    tabToActivate.classList.add('active');
 
+    if (dropdownItems) {
+        const tabName = tabToActivate.textContent.trim();
+        const dropdownToActivate = Array.from(dropdownItems)
+            .find(d => d.textContent.trim() === tabName);
+        if (dropdownToActivate) {
+            dropdownToActivate.classList.add('active');
+        }
+    }
+
+    currentTagName = tabToActivate.textContent.trim();
     updateCards(currentTagName);
 }
+
 
 export function updateCards(tagName) {
     const isMobile = window.innerWidth <= 800;

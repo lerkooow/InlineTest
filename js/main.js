@@ -10,25 +10,26 @@ async function initApp() {
 
   app.innerHTML = tabs + cards + footer;
 
-  const tabsItems = document.querySelectorAll('.tabs__tab');
+  const tabsItems = document.querySelectorAll('.tabs__item');
   const dropdownItems = document.querySelectorAll('.tabs__dropdown--item');
 
   toggleDropdown();
   initSwiper();
-  setActiveTab(tabsItems);
+  setActiveTab(tabsItems, null, dropdownItems);
 
   tabsItems.forEach(tab => {
     tab.addEventListener('click', () => {
-      setActiveTab(tabsItems, tab);
+      setActiveTab(tabsItems, tab, dropdownItems);
     });
   });
 
   dropdownItems.forEach(dropdownItem => {
     dropdownItem.addEventListener('click', () => {
-      const tagName = dropdownItem.textContent;
-      const correspondingTab = Array.from(tabsItems).find(tab => tab.textContent === tagName);
+      const tagName = dropdownItem.textContent.trim();
+      const correspondingTab = Array.from(tabsItems)
+        .find(tab => tab.textContent.trim() === tagName);
       if (correspondingTab) {
-        setActiveTab(tabsItems, correspondingTab);
+        setActiveTab(tabsItems, correspondingTab, dropdownItems);
       }
       const dropdown = document.getElementById('tabsDropdown');
       if (dropdown) {
