@@ -28,19 +28,20 @@ function createCardHTML(card, isSwiper = false) {
 
 export function createSwiper(slidesCount = 0) {
   if (window.innerWidth <= 800) {
-    new Swiper('.swiper', {
+    if (window.swiperInstance) {
+      window.swiperInstance.destroy(true, true);
+    }
+
+    window.swiperInstance = new Swiper('.swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
-      centeredSlides: slidesCount >= 3,
-      loop: 3,
+      centeredSlides: true,
+      loop: slidesCount >= 3,
       breakpoints: {
-        320: {
-          spaceBetween: 12,
-        },
-        480: {
-          spaceBetween: 16,
-        }
-      }
+        320: { spaceBetween: 12 },
+        480: { spaceBetween: 16 }
+      },
+
     });
   }
 }
@@ -55,7 +56,7 @@ export function updateCards(tagName = 'All') {
   let content;
 
   if (tagName === 'All') {
-    content = cardsData.map(card => createCardHTML(card, isMobile)).join('');
+    content = cardsData.map(card => createCardHTML(card, isMobile));
   } else {
     content = isMobile
       ? `<div class="swiper-slide"><div><h2>${tagName}</h2></div></div>`
@@ -72,7 +73,6 @@ export function updateCards(tagName = 'All') {
 
   currentTagName = tagName;
 }
-
 
 export function setActiveTab(tabsItems, activeTab = null, dropdownItems = null) {
   [...tabsItems, ...(dropdownItems || [])].forEach(item =>
