@@ -1,33 +1,10 @@
-.footer {
-  display: flex;
-  justify-content: space-between;
-  margin: 0 16px;
-  gap: clamp(24px, 8vw, 91px);
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-  }
-
-  &__contacts {
-    max-width: 407px;
-    width: 100%;
-
-    @media (max-width: 800px) {
-      max-width: 100%;
-    }
-  }
-}
-
 .contacts {
   &__process {
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Lato", sans-serif;
-    background-color: #ffcc4a;
+    background-color: var(--color-accent);
     width: 127px;
     height: 26px;
     border-radius: 20px;
@@ -41,8 +18,7 @@
   }
 
   &__description {
-    color: #595566;
-    font-family: "Lato", sans-serif;
+    color: var(--color-gray);
     font-size: clamp(14px, 4vw, 16px);
   }
 
@@ -71,8 +47,7 @@
   }
 
   &__info-label {
-    color: #595566;
-    font-family: "Lato", sans-serif;
+    color: var(--color-gray);
     margin: 0;
   }
 
@@ -117,38 +92,27 @@
 
   &__label {
     margin-bottom: 8px;
-    font-family: "Lato", sans-serif;
     font-weight: 400;
-  }
-
-  &__label--optional {
-    font-weight: 300;
-    font-size: 14px;
-    color: #999;
-    margin-left: 4px;
   }
 
   &__input,
   &__textarea {
     padding: 22px 33px;
-    border: 1px solid #a9a9a9;
+    border: 1px solid var(--color-light-gray);
     border-radius: 54px;
     outline: none;
     width: 318px;
     transition: border-color 0.3s ease;
     height: 68px;
-    font-family: "Lato", sans-serif;
     font-size: 16px;
-    color: #333;
     box-sizing: border-box;
 
     &::placeholder {
-      color: #a9a9a9;
-      font-family: "Lato", sans-serif;
+      color: var(--color-light-gray);
     }
 
     &:focus {
-      border-color: #000;
+      border-color: var(--color-black);
     }
   }
 
@@ -167,15 +131,15 @@
     height: 61px;
     width: 168px;
     border-radius: 42px;
-    background-color: #181818;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     align-self: flex-start;
 
     &:hover {
-      background-color: #333;
+      background-color: var(--color-gray);
     }
   }
 }

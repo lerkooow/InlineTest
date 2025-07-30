@@ -11,8 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Lato", sans-serif;
-    background-color: #ffcc4a;
+    background-color: var(--color-accent);
     width: 127px;
     height: 26px;
     border-radius: 20px;
@@ -24,11 +23,11 @@
     margin-bottom: 13px;
     font-weight: 700;
     text-align: start;
+    font-family: var(--font-secondary);
   }
 
   &__description {
-    color: #595566;
-    font-family: "Lato", sans-serif;
+    color: var(--color-gray);
     font-size: clamp(14px, 4vw, 16px);
   }
 
@@ -63,8 +62,7 @@
   }
 
   &__info-label {
-    color: #595566;
-    font-family: "Lato", sans-serif;
+    color: var(--color-gray);
     margin: 0;
   }
 
@@ -73,11 +71,13 @@
     font-weight: 600;
     text-decoration: none;
     color: inherit;
+    font-family: var(--font-secondary);
   }
 
   &__info-text {
     font-size: 20px;
     font-weight: 600;
     color: inherit;
+    font-family: var(--font-secondary);
   }
 }

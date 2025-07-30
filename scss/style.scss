@@ -6,13 +6,15 @@
 :root {
   --color-primary: #181818;
   --color-accent: #ffcc4a;
+  --color-accent-light: #ffcc4a87;
   --color-white: #ffffff;
   --color-gray: #595566;
   --color-light-gray: #a9a9a9;
   --color-bg-light: #f5f5f5;
+  --color-black: #000000;
 
-  --font-primary: "Cabin", sans-serif;
-  --font-secondary: "Lato", sans-serif;
+  --font-primary: "Lato", sans-serif;
+  --font-secondary: "Cabin", sans-serif;
 }
 
 * {

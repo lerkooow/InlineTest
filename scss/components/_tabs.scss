@@ -34,6 +34,7 @@
     color: var(--color-white);
     list-style-type: none;
     cursor: pointer;
+    font-family: var(--font-secondary);
 
     &:hover {
       color: var(--color-accent);
@@ -50,7 +51,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: darken($color: #ffcc4a, $amount: 30);
+      background-color: var(--color-accent-light);
       border-radius: 10px;
       transition: background-color 0.3s ease;
     }
