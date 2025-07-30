@@ -1,21 +1,22 @@
-import { getCurrentTagName, initSwiper, setActiveTab, updateCards } from "./components/cards.js";
+import { getCurrentTagName, createSwiper, setActiveTab, updateCards } from "./components/cards.js";
 import { toggleDropdown } from "./components/tabs.js";
 
 async function initApp() {
   const app = document.getElementById('app');
+  const footerWrapper = document.getElementById('info__section-wrapper');
 
   const tabs = await fetch('./components/Tabs.html').then(res => res.text());
   const cards = await fetch('./components/Cards.html').then(res => res.text());
-  const footer = await fetch('./components/Footer.html').then(res => res.text());
+  const contacts = await fetch('./components/Contacts.html').then(res => res.text());
+  const form = await fetch('./components/Form.html').then(res => res.text());
 
-  app.innerHTML = tabs + cards + footer;
+
+  app.innerHTML = tabs + cards;
+  footerWrapper.innerHTML = contacts + form;
 
   const tabsItems = document.querySelectorAll('.tabs__item');
-  const dropdownItems = document.querySelectorAll('.tabs__dropdown--item');
+  const dropdownItems = document.querySelectorAll('.tabs__dropdown-item');
 
-  toggleDropdown();
-  initSwiper();
-  setActiveTab(tabsItems, null, dropdownItems);
 
   tabsItems.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -41,6 +42,10 @@ async function initApp() {
   window.addEventListener('resize', () => {
     updateCards(getCurrentTagName());
   });
+
+  toggleDropdown();
+  createSwiper();
+  setActiveTab(tabsItems, null, dropdownItems);
 }
 
 

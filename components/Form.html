@@ -1,0 +1,27 @@
+<form class="footer__form form" novalidate aria-labelledby="form-title" role="form">
+  <div class="form__row">
+    <div class="form__group">
+      <label class="form__label" for="fullname">Full Name</label>
+      <input class="form__input" type="text" id="fullname" name="fullname" placeholder="john david" autocomplete="name" />
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="email">Email</label>
+      <input class="form__input" type="email" id="email" name="email" placeholder="consult@mail.com" autocomplete="email" />
+    </div>
+  </div>
+  <div class="form__row">
+    <div class="form__group">
+      <label class="form__label" for="phone">Phone</label>
+      <input class="form__input" type="tel" id="phone" name="phone" placeholder="+008 654 231" autocomplete="tel" />
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="company">Company <span class="form__label--optional">(optional)</span></label>
+      <input class="form__input" type="text" id="company" name="company" placeholder="yourcompany.com" autocomplete="organization" />
+    </div>
+  </div>
+  <div class="form__group">
+    <label class="form__label" for="message">Message</label>
+    <textarea class="form__textarea" id="message" name="message" rows="4" placeholder="Briefly tell us about your project and your current goals. How can we help you?"></textarea>
+  </div>
+  <button type="submit" class="form__submit">Send Message</button>
+</form>
