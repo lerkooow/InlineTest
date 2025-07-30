@@ -7,14 +7,27 @@
     gap: clamp(15px, 3vw, 25px);
     margin: clamp(24px, 8vw, 50px) auto clamp(48px, 10vw, 112px) auto;
     padding: clamp(16px, 4vw, 24px);
-    background-color: #f5f5f5;
+    background-color: var(--color-bg-light);
     border-radius: clamp(20px, 4vw, 30px);
     max-width: 1200px;
+
+    @media (max-width: 1024px) {
+      gap: clamp(12px, 2.5vw, 20px);
+      padding: clamp(12px, 3vw, 20px);
+    }
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   &__container--mobile {
     display: none;
     margin: clamp(24px, 8vw, 50px) 0 clamp(48px, 10vw, 112px) 0;
+
+    @media (max-width: 800px) {
+      display: block;
+    }
   }
 
   &__card {
@@ -31,6 +44,10 @@
       pointer-events: none;
       border-radius: clamp(20px, 4vw, 30px);
       min-width: 235px;
+
+      @media (max-width: 480px) {
+        min-width: 220px;
+      }
     }
 
     &:hover::after {
@@ -56,7 +73,7 @@
 
       p {
         font-size: clamp(18px, 4vw, 25px);
-        color: #fff;
+        color: var(--color-white);
         font-weight: 600;
         margin-bottom: 4px;
         line-height: 1.2;
@@ -92,10 +109,14 @@
   }
 
   &__text--small {
-    color: #ffcc4a !important;
+    color: var(--color-accent) !important;
     font-size: clamp(14px, 3vw, 16px) !important;
     font-weight: 500 !important;
   }
+}
+
+h2 {
+  text-align: center;
 }
 
 .swiper {
@@ -106,35 +127,8 @@
 .swiper-slide {
   width: 230px !important;
   height: auto;
-}
 
-@media (max-width: 1024px) {
-  .cards__container--desktop {
-    gap: clamp(12px, 2.5vw, 20px);
-    padding: clamp(12px, 3vw, 20px);
-  }
-}
-
-@media (max-width: 800px) {
-  .cards__container--desktop {
-    display: none;
-  }
-
-  .cards__container--mobile {
-    display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  .swiper-slide {
+  @media (max-width: 480px) {
     width: 240px !important;
   }
-
-  .cards__card {
-    min-width: 220px;
-  }
-}
-
-h2 {
-  text-align: center;
 }
