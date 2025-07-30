@@ -56,7 +56,7 @@ export function updateCards(tagName = 'All') {
   let content;
 
   if (tagName === 'All') {
-    content = cardsData.map(card => createCardHTML(card, isMobile));
+    content = cardsData.map(card => createCardHTML(card, isMobile)).join('');
   } else {
     content = isMobile
       ? `<div class="swiper-slide"><div><h2>${tagName}</h2></div></div>`
