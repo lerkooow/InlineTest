@@ -26,12 +26,12 @@ function createCardHTML(card, isSwiper = false) {
   return isSwiper ? `<div class="swiper-slide">${cardHTML}</div>` : cardHTML;
 }
 
-export function createSwiper() {
+export function createSwiper(slidesCount = 0) {
   if (window.innerWidth <= 800) {
     new Swiper('.swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
-      centeredSlides: true,
+      centeredSlides: slidesCount >= 3,
       loop: 3,
       breakpoints: {
         320: {
