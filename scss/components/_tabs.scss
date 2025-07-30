@@ -9,8 +9,9 @@
 }
 
 .tabs {
-  background-color: #181818;
+  background-color: var(--color-primary);
   max-width: 1025px;
+  width: 100%;
   min-height: 97px;
   border-radius: 30px;
   display: flex;
@@ -30,12 +31,12 @@
 
   &__item {
     font-size: clamp(16px, 3vw, 25px);
-    color: #ffffff;
+    color: var(--color-white);
     list-style-type: none;
     cursor: pointer;
 
     &:hover {
-      color: #ffcc4a;
+      color: var(--color-accent);
       transition: color 0.3s ease;
     }
 
@@ -49,7 +50,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #ffcc4aaa;
+      background-color: darken($color: #ffcc4a, $amount: 30);
       border-radius: 10px;
       transition: background-color 0.3s ease;
     }
@@ -78,38 +79,38 @@
     flex-direction: column;
     gap: 12px;
     margin-top: 12px;
-    background-color: #181818;
+    background-color: var(--color-primary);
     border-radius: 12px;
     padding: 16px;
     list-style: none;
     z-index: 2;
 
     &-item {
-      color: #ffffff;
+      color: var(--color-white);
       font-size: 18px;
       padding: 12px 16px;
       cursor: pointer;
 
       &:hover {
-        color: #ffcc4a;
+        color: var(--color-accent);
       }
     }
 
     &.open {
       @media (max-width: 425px) {
-        display: block !important;
+        display: block;
         position: absolute;
         right: 16px;
       }
     }
 
     @media (min-width: 425px) {
-      display: none !important;
+      display: none;
     }
   }
 }
 
 .active {
-  border-bottom: 2px solid #ffcc4a;
-  color: #ffcc4a;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent);
 }
